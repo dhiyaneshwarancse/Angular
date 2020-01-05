@@ -1,0 +1,10 @@
+<p>new-comp added here {{ newCompVar }} works!</p>
+<select (change)="changeDropDown($event)">
+  <option *ngFor="let i of numb">{{ i }}</option>
+</select>
+
+<span *ngIf="isValid; then cond2; else condition1">Condition is valid..</span>
+
+<ng-template #condition1>condition is invalid as cond1</ng-template>
+<ng-template #cond2>condition is validdddd</ng-template>
+<button (click)="myClickFunction($event)">Click here</button>
