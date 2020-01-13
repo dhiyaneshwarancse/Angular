@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyserviceService } from './myservice.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular7-app';
+  todayDateApp;
+  constructor(private servApp:MyserviceService){}
+  ngOnInit()
+  {
+this.todayDateApp = this.servApp.showTodayDate();
+  }
 }

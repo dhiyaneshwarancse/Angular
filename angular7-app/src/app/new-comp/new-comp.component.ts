@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { MyserviceService } from '../myservice.service';
 
 @Component({
   selector: "app-new-comp",
@@ -6,7 +7,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./new-comp.component.css"]
 })
 export class NewCompComponent implements OnInit {
-  constructor() {}
+
+  constructor(private myser: MyserviceService ) {
+   }
   newCompVar = "Dhiyanesh enetered here...";
   numb = ["one", "two", "three"];
   isValid = true;
@@ -19,5 +22,9 @@ export class NewCompComponent implements OnInit {
     console.log(event);
   }
 
-  ngOnInit() {}
+  todayDate = this.myser.showTodayDate() ;
+
+
+  ngOnInit() {
+  }
 }
