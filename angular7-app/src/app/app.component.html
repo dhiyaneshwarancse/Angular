@@ -387,6 +387,12 @@
       >my First web {{ title | uppercase }} app.. is running! at {{todayDateApp}}</span
     >
   </div>
+  User data:
+  <ul>
+    <li *ngFor="let item of personData;let i=index">
+{{item.name}} -- {{item.email}}
+    </li>
+  </ul>
 </div>
 <app-new-comp>asdf</app-new-comp>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

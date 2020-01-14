@@ -9,9 +9,18 @@ import { MyserviceService } from './myservice.service';
 export class AppComponent {
   title = 'angular7-app';
   todayDateApp;
+  public personData=[];
   constructor(private servApp:MyserviceService){}
   ngOnInit()
   {
 this.todayDateApp = this.servApp.showTodayDate();
+this.servApp.getData().subscribe(
+(data)=> {
+  this.personData=Array.from(Object.keys(data),k=>data[k])
+  
+}
+
+);
+
   }
 }
